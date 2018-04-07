@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "webpack --config webpack.config.js",
-    "build": "NODE_ENV=production webpack --config webpack/webpack.config.js"
+    "build": "NODE_ENV=production node webpack/webpack.config.js"
   },
   "standard": {
     "ignore": [
