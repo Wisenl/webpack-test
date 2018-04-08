@@ -1,4 +1,4 @@
-require('./main.css')
+// require('./main.css')
 console.log('bbb')
 
 if (module.hot) {

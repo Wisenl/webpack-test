@@ -1,17 +1,20 @@
-import path from 'path'
-import DllPlugin from 'webpack/lib/DllPlugin'
+// import path from 'path'
+const DllPlugin = require('webpack/lib/DllPlugin')
+const path = require('path')
 
-export default {
-  entry: [],
+module.exports = {
+  entry: {
+    react: ['redux']
+  },
   output: {
-    filename: '[name]_dll.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: 'vendor.[name]_[hash]_dll.js',
+    path: path.resolve(__dirname, '..', 'dist'),
     library: '_dll_[name]'
   },
   plugins: [
     new DllPlugin({
       name: '_dll_[name]',
-      path: path.join(__dirname, 'dist', '[name].manifest.js')
+      path: path.join(__dirname, '..', 'dist', 'vendor.[name].manifest.json')
     })
   ]
 }

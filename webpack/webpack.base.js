@@ -2,16 +2,16 @@ const path = require('path')
 const DllReferencePlugin = require('webpack/lib/DllReferencePlugin')
 
 const baseConfig = {
-  entry: '../src/app.js',
+  entry: './main.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve()
+    path: path.resolve(__dirname, 'dist')
   },
   plugins: [
     new DllReferencePlugin({
-      manifest: require('./dist/polyfill.manifest.json')
+      manifest: require('../dist/vendor.redux.manifest')
     })
   ]
 }
 
-export default baseConfig
+module.exports = baseConfig
