@@ -4,17 +4,17 @@ const path = require('path')
 
 module.exports = {
   entry: {
-    react: ['redux']
+    redux: ['redux']
   },
   output: {
     filename: 'vendor.[name]_[hash]_dll.js',
-    path: path.resolve(__dirname, '..', 'dist'),
+    path: path.resolve(__dirname, '..', 'dist', 'vendor'),
     library: '_dll_[name]'
   },
   plugins: [
     new DllPlugin({
       name: '_dll_[name]',
-      path: path.join(__dirname, '..', 'dist', 'vendor.[name].manifest.json')
+      path: path.join(__dirname, '..', 'dist', 'vendor', 'vendor.[name].manifest.json')
     })
   ]
 }

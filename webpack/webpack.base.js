@@ -9,7 +9,7 @@ const baseConfig = {
   },
   plugins: [
     new DllReferencePlugin({
-      manifest: require('../dist/vendor.redux.manifest')
+      manifest: require('../dist/vendor/vendor.redux.manifest')
     })
   ]
 }

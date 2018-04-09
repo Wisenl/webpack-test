@@ -1,0 +1,4 @@
+{
+  "plugins": ["transfer-runtime"],
+  "presets": ["env", "react", "stage-0"]
+}
