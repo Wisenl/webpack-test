@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import data from './mock'
 
 ReactDOM.render(
-  <h1>Hello</h1>,
+  <h1>{data}</h1>,
   document.getElementById('root')
 )
