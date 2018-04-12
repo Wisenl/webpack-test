@@ -1,4 +1,13 @@
 {
-  "plugins": ["transfer-runtime"],
-  "presets": ["env", "react", "stage-0"]
+  "plugins": ["transform-runtime"],
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["chrome >= 52"]
+      },
+      "useBuiltIns": true
+    }],
+    "react",
+    "stage-2"
+  ]
 }

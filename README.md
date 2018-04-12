@@ -40,5 +40,42 @@
 
 
 
+### babel 优化
+
+使用 transform-runtime 的缺陷：
+
+1. 受到作用域的限制，不能完全对ES6代码进行编译，
+2. 每个文件都会处理，可能延长webpack打包时间
+
+使用 babel-polyfill 的缺陷：
+
+1. 引用文件会改变全局作用域（在非类库项目中影响不大）
+2. 体积过大（200多k）
+
+优化：在.babelrc文件中修改preset配置, 添加 **useBuiltIns** 属性。同时要安装 core-js 包作为生产环境依赖。
+
+```javascript
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["chrome >= 59"]
+      },
+      "useBuiltIns": true
+    }],
+    "react",
+    "stage-2"
+  ]
+}
+```
+
+这样在 文件中引用 babel-polyfill 时会自动根据配置的环境，替换为所需的 polyfill。
+
+上例中，得到的 polyfill 文件体积就只有原 polyfill 的六分之一。
+
+
+
+
+
 
 
