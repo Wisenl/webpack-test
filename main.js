@@ -2,25 +2,28 @@
 import 'babel-polyfill'
 console.log('bbb')
 
-if (module.hot) {
-  module.hot.accept()
-}
-let a = 555
+let a = 55555
 console.log(a)
 
 class A {
   constructor () {
-    this.aa = 'aa'
+    this.aa = 'aaaaaaa'
   }
   hei () {
     console.log(this.aa)
   }
 }
-let aa = A()
+let aa = new A()
 console.log(aa.hei())
-Object.assign(aa, {b: 'dddd---------'})
+Object.assign(aa, {b: 'dddd-------------'})
 let fun = aa.fun = () => {
   let o = Object
-  let k = 'kkk'
+  let k = 'kk'
   o.assign(aa, {b: k})
+  console.log(aa)
+}
+fun()
+console.log('change')
+if (module.hot) {
+  module.hot.accept()
 }

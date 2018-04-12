@@ -2,7 +2,7 @@ const path = require('path')
 const DllReferencePlugin = require('webpack/lib/DllReferencePlugin')
 
 const baseConfig = {
-  entry: path.resolve(__dirname, '..', 'main.js'),
+  entry: ['webpack-hot-middleware/client?noInfo=true&reload=true', path.resolve(__dirname, '..', 'main.js')],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, '..', 'dist')
@@ -16,11 +16,11 @@ const baseConfig = {
       }
     ]
   },
-  plugins: [
-    new DllReferencePlugin({
-      manifest: require('../dist/vendor/vendor.redux.manifest')
-    })
-  ]
+  // plugins: [
+  //   new DllReferencePlugin({
+  //     manifest: require('../dist/vendor/vendor.redux.manifest')
+  //   })
+  // ]
 }
 
 module.exports = baseConfig
