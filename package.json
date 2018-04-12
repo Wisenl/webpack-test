@@ -2,7 +2,7 @@
   "scripts": {
     "dev": "webpack-dev-server --open --config webpack/webpack.dev.js",
     "start": "webpack --config webpack.config.js",
-    "build": "NODE_ENV=production node webpack/webpack.config.js",
+    "build": "NODE_ENV=production node webpack/build",
     "build-dll": "rm -rf ./dist/vendor && webpack --config webpack/webpack.dll.js"
   },
   "standard": {

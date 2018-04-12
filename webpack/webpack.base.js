@@ -2,10 +2,19 @@ const path = require('path')
 const DllReferencePlugin = require('webpack/lib/DllReferencePlugin')
 
 const baseConfig = {
-  entry: './main.js',
+  entry: path.resolve(__dirname, '..', 'main.js'),
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, '..', 'dist')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loaders: ['babel-loader'],
+        include: [path.resolve(__dirname, '..', 'src')]
+      }
+    ]
   },
   plugins: [
     new DllReferencePlugin({
