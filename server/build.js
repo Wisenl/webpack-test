@@ -1,6 +1,6 @@
 const ora = require('ora')
 const chalk = require('chalk')
-const prodConfig = require('./webpack.prod')
+const prodConfig = require('./webpack/webpack.prod')
 const webpack = require('webpack')
 /*
 传入回调函数才会执行 webpack complier

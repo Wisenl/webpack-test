@@ -1,4 +1,4 @@
-const conf = require('./config')
+const conf = require('../config')
 const path = require('path')
 const baseConfig = require('./webpack.base')
 const merge = require('webpack-merge')
