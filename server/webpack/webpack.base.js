@@ -2,11 +2,6 @@ const path = require('path')
 const DllReferencePlugin = require('webpack/lib/DllReferencePlugin')
 
 const baseConfig = {
-  entry: ['webpack-hot-middleware/client?noInfo=true&reload=true', path.resolve(__dirname, '..', 'main.js')],
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, '..', 'dist')
-  },
   module: {
     rules: [
       {
@@ -19,7 +14,7 @@ const baseConfig = {
             cacheDirectory: './webpack_cache/'
           }
         }],
-        include: [path.resolve(__dirname, '..', 'src'), path.resolve(__dirname, '..', 'main.js')]
+        include: [path.resolve(__dirname, '..', 'src'), path.resolve(__dirname, '../../', 'main.js')]
       }
     ]
   },

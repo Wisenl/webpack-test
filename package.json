@@ -1,9 +1,10 @@
 {
   "scripts": {
     "dev": "webpack-dev-server --open --config webpack/webpack.dev.js",
-    "start": "NODE_ENV=development node webpack/server",
-    "build": "NODE_ENV=production node webpack/build",
-    "build-dll": "rm -rf ./dist/vendor && webpack --config webpack/webpack.dll.js"
+    "server:dev": "NODE_ENV=development node server/server",
+    "server:prod": "NODE_ENV=production node server/server",
+    "build": "NODE_ENV=production node server/build",
+    "build-dll": "rm -rf ./dist/vendor && BUILDING_DLL=true webpack -colors --display-chunks --config webpack/webpack.dll.js --hide-modules"
   },
   "standard": {
     "ignore": [
@@ -23,6 +24,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "chalk": "^2.4.0",
+    "compression": "^1.7.2",
     "css-loader": "^0.28.11",
     "express": "^4.16.3",
     "extract-text-webpack-plugin": "^3.0.2",

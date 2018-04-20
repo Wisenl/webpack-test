@@ -7,7 +7,7 @@ console.log(a)
 
 class A {
   constructor () {
-    this.aa = 'aaaaaaa'
+    this.aa = 'a  a'
   }
   hei () {
     console.log(this.aa)

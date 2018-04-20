@@ -8,13 +8,18 @@ const FriendlyErrorPlugin = require('friendly-errors-webpack-plugin')
 const DllReferencePlugin = require('webpack/lib/DllReferencePlugin')
 
 const devConfig = {
+  entry: ['webpack-hot-middleware/client?noInfo=true&reload=true', path.resolve(__dirname, '..', '..', 'main.js')],
+  output: {
+    filename: '[name].js',
+    path: path.resolve(process.cwd(), 'dist')
+  },
   devtool: 'inline-source-map',
   // devServer: {
   //   contentBase: './dist'
   // },
   plugins: [
     new HtmlPlugin({
-      template: path.join(__dirname, '../index.html'),
+      template: path.join(__dirname, '../../index.html'),
       path: path.resolve(__dirname, '../dist'),
       filename: 'index.html'
     }),
