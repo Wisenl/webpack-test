@@ -4,7 +4,7 @@
     "server:dev": "NODE_ENV=development node server/server",
     "server:prod": "NODE_ENV=production node server/server",
     "build": "NODE_ENV=production node server/build",
-    "build-dll": "rm -rf ./dist/vendor && BUILDING_DLL=true webpack -colors --display-chunks --config webpack/webpack.dll.js --hide-modules"
+    "build-dll": "rm -rf ./dist/vendor && BUILDING_DLL=true webpack --colors --display-chunks --config server/webpack/webpack.dll.js --hide-modules"
   },
   "standard": {
     "ignore": [
@@ -17,6 +17,7 @@
     ]
   },
   "devDependencies": {
+    "add-asset-html-webpack-plugin": "^2.1.3",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -32,6 +33,7 @@
     "html-webpack-plugin": "^3.2.0",
     "ip": "^1.1.5",
     "ora": "^2.0.0",
+    "rimraf": "^2.6.2",
     "standard": "^11.0.1",
     "style-loader": "^0.20.3",
     "webpack": "^3.8.1",
@@ -44,6 +46,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "core-js": "^2.5.5",
+    "glob": "^7.1.2",
     "mockjs": "^1.0.1-beta3",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",

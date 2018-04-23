@@ -1,6 +1,9 @@
 // require('./main.css')
 import 'babel-polyfill'
-console.log('bbb')
+import react from 'react'
+console.log(react)
+console.log('aaa')
+console.log('ccc')
 
 let a = 55555
 console.log(a)
