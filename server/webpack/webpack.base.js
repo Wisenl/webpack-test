@@ -2,6 +2,7 @@ const path = require('path')
 const DllReferencePlugin = require('webpack/lib/DllReferencePlugin')
 
 const baseConfig = {
+  context: process.cwd(), // webpack 寻找相对路径时以此目录为根目录
   module: {
     rules: [
       {

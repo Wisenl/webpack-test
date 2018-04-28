@@ -24,7 +24,7 @@ glob.sync(`${vendorPath}/*.js`).forEach((dllPath) => {
 
 const devConfig = {
   // 开发环境不使用 [hush], 减少打包时间
-  entry: ['webpack-hot-middleware/client?noInfo=true&reload=true', path.resolve(process.cwd(), 'main.js')],
+  entry: ['webpack-hot-middleware/client?noInfo=true&reload=true', path.resolve(process.cwd(), 'main2.js'), path.resolve(process.cwd(), 'main.js')],
   output: {
     filename: '[name].js',
     path: path.resolve(process.cwd(), 'dist')

@@ -1,1 +1,1 @@
-console.log('aaa')
+console.log('main222222222')
